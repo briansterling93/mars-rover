@@ -3,12 +3,11 @@ import styled from "styled-components";
 export const ImgInfoSection = styled.div`
   width: 25rem;
   height: 5rem;
-  font-family: arial;
+  font-family: trispace;
+  letter-spacing: 0.1rem;
   font-size: 1.3rem;
-  font-weight: 700;
-  border-radius: 1rem;
-  color: #505050;
-  background-color: rgba(0, 0, 0, 0);
+  font-weight: 300;
+  color: black;
 `;
 
 export const ImgBtns = styled.div`
@@ -20,7 +19,7 @@ export const ImgBtns = styled.div`
 export const DownloadBtn = styled.div`
   padding-right: 1.3rem;
   button {
-    background-color: #333333;
+    background-color: black;
     border-radius: 0.3rem;
     color: white;
     font-family: arial;
@@ -41,7 +40,7 @@ export const DownloadBtn = styled.div`
 export const NextBtn = styled.div`
   padding-left: 1.3rem;
   button {
-    background-color: #333333;
+    background-color: black;
     border-radius: 0.3rem;
     color: white;
     font-family: arial;

@@ -41,6 +41,7 @@ export const SecondaryTitle = styled.div`
 `;
 
 export const Img = styled.div`
+  padding-bottom: 0.3rem;
   img {
     width: 55rem;
     height: 28rem;
