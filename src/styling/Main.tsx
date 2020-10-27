@@ -1,14 +1,19 @@
 import styled from "styled-components";
 
 export const MainSection = styled.div`
-  margin-top: 2rem;
+  margin-top: 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const SecondarySection = styled.div`
-  margin-top: 3rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
+  flex-direction: row;
+  align-items: center;
 `;
 
 export const Titles = styled.div`
@@ -25,14 +30,14 @@ export const PrimaryTitle = styled.div`
   color: blue;
   font-size: 3rem;
   font-weight: 700;
-  letter-spacing: 0.3rem;
-  padding-bottom: 0.5rem;
+  // letter-spacing: 1.2rem;
   font-family: digital;
 `;
 
 export const SecondaryTitle = styled.div`
-  color: white;
-  font-size: 1.2rem;
+  color: red;
+  font-size: 1rem;
+  letter-spacing: 0.3rem;
   font-weight: 500;
   font-family: arial;
 `;
@@ -40,7 +45,7 @@ export const SecondaryTitle = styled.div`
 export const Img = styled.div`
   img {
     width: 55rem;
-    height: 30rem;
+    height: 28rem;
   }
   padding-left: 1rem;
   padding-right: 1rem;

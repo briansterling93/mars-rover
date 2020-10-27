@@ -7,7 +7,12 @@ import {
   SecondaryTitle,
   Img,
 } from ".././styling/Main";
-import { ImgInfoSection } from "../styling/RoverInfo";
+import {
+  ImgInfoSection,
+  ImgBtns,
+  DownloadBtn,
+  NextBtn,
+} from "../styling/RoverInfo";
 import axios from "axios";
 
 const MarsRover: React.FC = () => {
@@ -24,20 +29,30 @@ const MarsRover: React.FC = () => {
     <div>
       <Titles>
         <PrimaryTitle>NASA</PrimaryTitle>
-        <SecondaryTitle>Welcome to the Mars Rover</SecondaryTitle>
+        <SecondaryTitle>The Mars Rover</SecondaryTitle>
       </Titles>
       <MainSection>
+        <ImgInfoSection>
+          <div>Rover Name: dsdsd</div>
+          <div>Rover Camera: dsdsd</div>
+        </ImgInfoSection>
         <SecondarySection>
-          <ImgInfoSection>
-            <div></div>
-          </ImgInfoSection>
           <Img>
-            <img src="http://mars.jpl.nasa.gov/msl-raw-images/msss/01000/mcam/1000MR0044631300503690C00_DXXX.jpg" />
+            <img src="http://mars.jpl.nasa.gov/msl-raw-images/msss/01000/mcam/1000ML0044630930405190E01_DXXX.jpg" />
           </Img>
-          <ImgInfoSection>
+          <ImgBtns>
             <div></div>
-          </ImgInfoSection>
+          </ImgBtns>
         </SecondarySection>
+
+        <ImgBtns>
+          <DownloadBtn>
+            <button>Download Image</button>
+          </DownloadBtn>
+          <NextBtn>
+            <button>Next Photo</button>
+          </NextBtn>
+        </ImgBtns>
       </MainSection>
     </div>
   );
