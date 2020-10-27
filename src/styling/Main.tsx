@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MainSection = styled.div`
-  margin-top: 1rem;
+  margin-top: 3rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,6 @@ export const MainSection = styled.div`
 `;
 
 export const SecondarySection = styled.div`
-  margin-top: 1rem;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -17,7 +16,6 @@ export const SecondarySection = styled.div`
 `;
 
 export const Titles = styled.div`
-  margin-top: 1rem;
   text-align: center;
   color: black;
   font-size: 1.8rem;
@@ -38,7 +36,7 @@ export const SecondaryTitle = styled.div`
   color: red;
   font-size: 1rem;
   letter-spacing: 0.3rem;
-  font-weight: 500;
+  font-weight: 700;
   font-family: arial;
 `;
 

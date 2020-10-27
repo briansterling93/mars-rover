@@ -33,8 +33,9 @@ const MarsRover: React.FC = () => {
       </Titles>
       <MainSection>
         <ImgInfoSection>
-          <div>Rover Name: dsdsd</div>
-          <div>Rover Camera: dsdsd</div>
+          <div>The Curiosity Rover</div>
+          <div>Front Hazard Avoidance Camera</div>
+          <div></div>
         </ImgInfoSection>
         <SecondarySection>
           <Img>
