@@ -43,9 +43,35 @@ export const SecondaryTitle = styled.div`
 export const Img = styled.div`
   padding-bottom: 0.3rem;
   img {
+    animation: moveInLeft 1s;
     width: 55rem;
     height: 28rem;
+    border-radius: 1rem;
   }
   padding-left: 1rem;
   padding-right: 1rem;
+
+  @keyframes moveInLeft {
+    0% {
+      opacity: 0;
+      transform: translatex(-2rem);
+    }
+
+    40% {
+      opacity: 0.3;
+    }
+
+    60% {
+      opacity: 0.4;
+    }
+
+    80% {
+      opacity: 0.6;
+    }
+
+    100% {
+      opacity: 0.7;
+      transform: translate(0);
+    }
+  }
 `;

@@ -17,12 +17,38 @@ import axios from "axios";
 
 const MarsRover: React.FC = () => {
   const [UIimg, setImg] = useState<string>("");
+  const [sol, setSol] = useState<string>("");
+  const [camera, setCamera] = useState<string>("");
   useEffect(() => {
-    console.log(1);
+    generatePhoto();
   }, []);
 
   const generatePhoto = async () => {
     try {
+      const config = {
+        headers: {
+          "content-type": "application/json",
+        },
+      };
+
+      let num = Math.floor(Math.random() * Math.max(1000));
+
+      const res = await axios.get(
+        "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol= " +
+          num +
+          "&api_key=KZX9PpEIMHEif2zp8lSwraPyImPQFV9VqgtaPHxE"
+      );
+
+      const count = Math.floor(
+        Math.random() * Math.max(res.data.photos.length)
+      );
+
+      const rover = res.data.photos[count];
+      console.log(rover);
+
+      await setImg(rover.img_src);
+      await setCamera(rover.camera.full_name);
+      await setSol(`Sol Day: ${rover.sol}`);
     } catch (error) {}
   };
   return (
@@ -34,16 +60,13 @@ const MarsRover: React.FC = () => {
       <MainSection>
         <ImgInfoSection>
           <div>The Curiosity Rover</div>
-          <div>Front Hazard Avoidance Camera</div>
-          <div></div>
+          <div>{camera}</div>
+          <div>{sol}</div>
         </ImgInfoSection>
         <SecondarySection>
           <Img>
-            <img src="http://mars.jpl.nasa.gov/msl-raw-images/msss/01000/mcam/1000ML0044630930405190E01_DXXX.jpg" />
+            <img src={UIimg} />
           </Img>
-          <ImgBtns>
-            <div></div>
-          </ImgBtns>
         </SecondarySection>
 
         <ImgBtns>
@@ -51,7 +74,7 @@ const MarsRover: React.FC = () => {
             <button>Download Image</button>
           </DownloadBtn>
           <NextBtn>
-            <button>Next Photo</button>
+            <button onClick={generatePhoto}>Next Photo</button>
           </NextBtn>
         </ImgBtns>
       </MainSection>
