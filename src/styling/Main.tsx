@@ -6,6 +6,14 @@ export const MainSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (max-width: 925px) {
+    margin-top: 1rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 1rem;
+  }
 `;
 
 export const SecondarySection = styled.div`
@@ -48,5 +56,104 @@ export const Img = styled.div`
     }
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  @media only screen and (max-width: 925px) {
+    img {
+      width: 40rem;
+      height: 18rem;
+      border-radius: 1rem;
+
+      :hover {
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+        transform: translateY(-0.3rem);
+      }
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+  @media only screen and (max-width: 768px) {
+    img {
+      width: 40rem;
+      height: 18rem;
+      border-radius: 1rem;
+
+      :hover {
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+        transform: translateY(-0.3rem);
+      }
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    @media only screen and (max-width: 670px) {
+      img {
+        width: 30rem;
+        height: 15rem;
+        border-radius: 1rem;
+  
+        :hover {
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+          transform: translateY(-0.3rem);
+        }
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      @media only screen and (max-width: 512px) {
+        img {
+          width: 25rem;
+          height: 15rem;
+          border-radius: 1rem;
+    
+          :hover {
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+            transform: translateY(-0.3rem);
+          }
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        @media only screen and (max-width: 450px) {
+          img {
+            width: 20rem;
+            height: 15rem;
+            border-radius: 1rem;
+      
+            :hover {
+              box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+              transform: translateY(-0.3rem);
+            }
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+
+          @media only screen and (max-width: 380px) {
+            img {
+              width: 15rem;
+              height: 15rem;
+              border-radius: 1rem;
+        
+              :hover {
+                box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+                transform: translateY(-0.3rem);
+              }
+              padding-left: 1rem;
+              padding-right: 1rem;
+            }
+
+            @media only screen and (max-width: 370px) {
+              img {
+                width: 10rem;
+                height: 12rem;
+                border-radius: 1rem;
+          
+                :hover {
+                  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+                  transform: translateY(-0.3rem);
+                }
+                padding-left: 1rem;
+                padding-right: 1rem;
+              }
   }
 `;

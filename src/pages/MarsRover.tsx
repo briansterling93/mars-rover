@@ -98,7 +98,7 @@ const MarsRover: React.FC = () => {
 
         <ImgBtns>
           <DownloadBtn>
-            <button onClick={imgDownload}>Download Image</button>
+            <button onClick={imgDownload}>Download</button>
           </DownloadBtn>
           <NextBtn>
             <button onClick={generatePhoto}>Next Photo</button>

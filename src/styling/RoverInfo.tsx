@@ -17,20 +17,21 @@ export const ImgBtns = styled.div`
   justify-content: space-around;
 
   button {
-    background-color: #000B69;
+    background-color: #000b69;
     border-radius: 0.3rem;
     color: white;
     font-family: arial;
     border: 1px solid #989898;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
-    height: 2.1rem;
-    width: 10rem;
+    height: 1.8rem;
+    width: 7rem;
     cursor: pointer;
     outline: none;
     :hover {
-     opacity: .7;
+      opacity: 0.7;
     }
+  }
 `;
 
 export const DownloadBtn = styled.div`
@@ -45,7 +46,7 @@ export const NextBtn = styled.div`
 
 export const RoverName = styled.div`
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: 700;
 `;
 export const CameraName = styled.div`
   font-size: 1rem;
@@ -53,4 +54,5 @@ export const CameraName = styled.div`
 `;
 export const SolName = styled.div`
   font-size: 1rem;
+  font-weight: 400;
 `;
