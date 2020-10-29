@@ -2,7 +2,7 @@
 
 The Mars Rover project consists of generating randomized photos from the public NASA Mars Rover api, providing high definition photos of Mars that have been taken by the rover itself. The user will have the ability to interact with the photos displayed within the UI, having the ability to view the photo's details, as well as download the photo locally.
 
-Live Project: https://plate-fit.web.app
+Live Project: https://rover-mars-ac5f6.web.app/
 
 ## Languages Used
 
