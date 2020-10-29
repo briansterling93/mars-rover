@@ -17,19 +17,13 @@ export const SecondarySection = styled.div`
 
 export const Titles = styled.div`
   text-align: center;
-  color: black;
-  font-size: 1.8rem;
-  letter-spacing: 0.1rem;
-  font-weight: 600;
-  font-family: Montserrat, sans-serif;
 `;
 
 export const PrimaryTitle = styled.div`
-  color: blue;
+  color: #000e8d;
   font-size: 3rem;
   font-weight: 700;
-  // letter-spacing: 1.2rem;
-  font-family: digital;
+  font-family: arial;
 `;
 
 export const SecondaryTitle = styled.div`
@@ -41,37 +35,18 @@ export const SecondaryTitle = styled.div`
 `;
 
 export const Img = styled.div`
-  padding-bottom: 0.3rem;
+  padding-bottom: 1rem;
+
   img {
-    animation: moveInLeft 1s;
     width: 55rem;
-    height: 28rem;
+    height: 25rem;
     border-radius: 1rem;
-  }
-  padding-left: 1rem;
-  padding-right: 1rem;
 
-  @keyframes moveInLeft {
-    0% {
-      opacity: 0;
-      transform: translatex(-2rem);
+    :hover {
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+      transform: translateY(-0.3rem);
     }
-
-    40% {
-      opacity: 0.3;
-    }
-
-    60% {
-      opacity: 0.4;
-    }
-
-    80% {
-      opacity: 0.6;
-    }
-
-    100% {
-      opacity: 0.7;
-      transform: translate(0);
-    }
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 `;

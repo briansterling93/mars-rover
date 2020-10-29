@@ -12,13 +12,20 @@ import {
   ImgBtns,
   DownloadBtn,
   NextBtn,
+  RoverName,
+  CameraName,
+  SolName,
 } from "../styling/RoverInfo";
 import axios from "axios";
+import { saveAs } from "file-saver";
+const FileSaver = require("file-saver");
 
 const MarsRover: React.FC = () => {
-  const [UIimg, setImg] = useState<string>("");
+  const [UIimg, setImg] = useState<any>();
   const [sol, setSol] = useState<string>("");
   const [camera, setCamera] = useState<string>("");
+  const [roverName, setRoverName] = useState<string>("");
+  const [ImgSrc, setImgSrc] = useState<string>("");
   useEffect(() => {
     generatePhoto();
   }, []);
@@ -33,8 +40,18 @@ const MarsRover: React.FC = () => {
 
       let num = Math.floor(Math.random() * Math.max(1000));
 
+      let roverOptions = ["curiosity", "spirit", "opportunity"];
+
+      let roverSelect = Math.floor(
+        Math.random() * Math.max(roverOptions.length)
+      );
+
+      let selectedRover = roverOptions[roverSelect];
+
       const res = await axios.get(
-        "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol= " +
+        "https://api.nasa.gov/mars-photos/api/v1/rovers/" +
+          selectedRover +
+          "/photos?sol=" +
           num +
           "&api_key=KZX9PpEIMHEif2zp8lSwraPyImPQFV9VqgtaPHxE"
       );
@@ -44,12 +61,24 @@ const MarsRover: React.FC = () => {
       );
 
       const rover = res.data.photos[count];
+
       console.log(rover);
 
-      await setImg(rover.img_src);
-      await setCamera(rover.camera.full_name);
-      await setSol(`Sol Day: ${rover.sol}`);
+      setImgSrc(rover.img_src);
+      setRoverName(`The ${rover.rover.name} Rover`);
+      setImg(<img src={rover.img_src} />);
+      setCamera(`Lens: ${rover.camera.full_name}`);
+      setSol(`Sol Day: ${rover.sol}`);
+
+      console.log(ImgSrc);
     } catch (error) {}
+  };
+
+  const imgDownload = () => {
+    let path = ImgSrc;
+    let fileName = "rover img";
+
+    saveAs(path, fileName);
   };
   return (
     <div>
@@ -59,19 +88,17 @@ const MarsRover: React.FC = () => {
       </Titles>
       <MainSection>
         <ImgInfoSection>
-          <div>The Curiosity Rover</div>
-          <div>{camera}</div>
-          <div>{sol}</div>
+          <RoverName>{roverName}</RoverName>
+          <CameraName>{camera}</CameraName>
+          <SolName>{sol}</SolName>
         </ImgInfoSection>
         <SecondarySection>
-          <Img>
-            <img src={UIimg} />
-          </Img>
+          <Img>{UIimg}</Img>
         </SecondarySection>
 
         <ImgBtns>
           <DownloadBtn>
-            <button>Download Image</button>
+            <button onClick={imgDownload}>Download Image</button>
           </DownloadBtn>
           <NextBtn>
             <button onClick={generatePhoto}>Next Photo</button>

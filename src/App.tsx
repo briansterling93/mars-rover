@@ -9,7 +9,7 @@ const Universal = createGlobalStyle`
     padding: .3rem;
     box-sizing: none;
     margin: 0;
-    background-color: #f6f6f6;
+    background-color: white;
     font-family: "Segoe UI";
     input {
       font-family: "Segoe UI"; 
