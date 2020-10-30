@@ -18,7 +18,6 @@ import {
 } from "../styling/RoverInfo";
 import axios from "axios";
 import { saveAs } from "file-saver";
-const FileSaver = require("file-saver");
 
 const MarsRover: React.FC = () => {
   const [UIimg, setImg] = useState<any>();
