@@ -8,7 +8,19 @@ export const ImgInfoSection = styled.div`
   font-size: 1.3rem;
   font-weight: 600;
   color: black;
-  padding-bottom: 0.5rem;
+`;
+
+export const ImgInfoSection2 = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  height: 3rem;
+  width: 25rem;
+  font-family: arial;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #000536;
 `;
 
 export const ImgBtns = styled.div`

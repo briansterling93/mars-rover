@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {
   MainSection,
   SecondarySection,
@@ -8,7 +8,13 @@ import {
   Img,
 } from ".././styling/Main";
 import {
+  StateContext,
+  initialState,
+  APP_ACTIONS,
+} from "../context/StateContext";
+import {
   ImgInfoSection,
+  ImgInfoSection2,
   ImgBtns,
   DownloadBtn,
   NextBtn,
@@ -18,6 +24,8 @@ import {
 } from "../styling/RoverInfo";
 import axios from "axios";
 import { saveAs } from "file-saver";
+import EarthDate from "../components/EarthDate";
+import RoverStatus from "../components/RoverStatus";
 
 const MarsRover: React.FC = () => {
   const [UIimg, setImg] = useState<any>();
@@ -25,6 +33,8 @@ const MarsRover: React.FC = () => {
   const [camera, setCamera] = useState<string>("");
   const [roverName, setRoverName] = useState<string>("");
   const [ImgSrc, setImgSrc] = useState<string>("");
+  const { state, dispatch } = useContext<any>(StateContext);
+  const { apiUrl } = state;
   useEffect(() => {
     generatePhoto();
   }, []);
@@ -61,15 +71,35 @@ const MarsRover: React.FC = () => {
 
       const rover = res.data.photos[count];
 
-      console.log(rover);
+      // update earth date component (earth date)
+      await dispatch({
+        type: APP_ACTIONS.UPDATE_EARTH_DATE,
+        payload: rover.earth_date,
+      });
+
+      // update rover info component (landing date)
+      await dispatch({
+        type: APP_ACTIONS.UPDATE_LANDING_DATE,
+        payload: rover.rover.landing_date,
+      });
+
+      // update rover info component (landing date)
+      await dispatch({
+        type: APP_ACTIONS.UPDATE_LAUNCH_DATE,
+        payload: rover.rover.launch_date,
+      });
+
+      // update rover info component (rover current status)
+      await dispatch({
+        type: APP_ACTIONS.UPDATE_ROVER_STATUS,
+        payload: rover.rover.status,
+      });
 
       setImgSrc(rover.img_src);
       setRoverName(`The ${rover.rover.name} Rover`);
       setImg(<img src={rover.img_src} />);
       setCamera(`Lens: ${rover.camera.full_name}`);
       setSol(`Sol Day: ${rover.sol}`);
-
-      console.log(ImgSrc);
     } catch (error) {}
   };
 
@@ -91,6 +121,11 @@ const MarsRover: React.FC = () => {
           <CameraName>{camera}</CameraName>
           <SolName>{sol}</SolName>
         </ImgInfoSection>
+        <ImgInfoSection2>
+          <EarthDate />
+
+          <RoverStatus />
+        </ImgInfoSection2>
         <SecondarySection>
           <Img>{UIimg}</Img>
         </SecondarySection>

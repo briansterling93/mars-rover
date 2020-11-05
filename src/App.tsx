@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useReducer } from "react";
 import ReactDOM from "react-dom";
 import MarsRover from "./pages/MarsRover";
 import { createGlobalStyle } from "styled-components";
 import { MainSection } from "./styling/Main";
+import { StateContext, initialState, reducer } from "./context/StateContext";
 
 const Universal = createGlobalStyle`
   body {
@@ -18,11 +19,12 @@ const Universal = createGlobalStyle`
 `;
 
 const App = () => {
+  const [state, dispatch] = useReducer<any>(reducer, initialState);
   return (
-    <div>
+    <StateContext.Provider value={{ state, dispatch }}>
       <Universal />
       <MarsRover />
-    </div>
+    </StateContext.Provider>
   );
 };
 
