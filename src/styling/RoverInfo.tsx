@@ -14,13 +14,16 @@ export const ImgInfoSection2 = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-
   height: 3rem;
   width: 25rem;
   font-family: arial;
   font-weight: 400;
   font-size: 0.9rem;
-  color: #000536;
+  color: #000322;
+
+  @media only screen and (max-width: 400px) {
+    font-size: 0.7rem;
+  }
 `;
 
 export const ImgBtns = styled.div`
